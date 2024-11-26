@@ -4,7 +4,6 @@ const cors = require("cors")
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken")
 
-const config = require("./config.json")
 const {authenticateToken} = require('./utilities')
 const User = require('./models/user.model')
 const Notes = require('./models/notes.model')
