@@ -83,6 +83,8 @@ Follow these steps to get the project running on your local machine:
 
 ## Contributions 🤝
 
+Special thanks to [@Anushka15030](https://github.com/Anushka15030) for their amazing design work on this project!
+
 - Feel free to fork this repository, submit issues, or contribute to improve **NoteNest.**
 
 
