@@ -84,6 +84,17 @@ Follow these steps to get the project running on your local machine:
 ## Contributions 🤝
 
 Special thanks to [@Anushka15030](https://github.com/Anushka15030) for their amazing design work on this project!
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Anushka15030">
+        <img src="https://avatars.githubusercontent.com/u/188815472?v=4" width="100px;" alt="Anushka15030"/>
+        <br />
+        <sub><b>Anushka15030</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 - Feel free to fork this repository, submit issues, or contribute to improve **NoteNest.**
 
