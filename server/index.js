@@ -1,3 +1,5 @@
+
+
 require("dotenv").config()
 const express = require("express");
 const cors = require("cors")
@@ -112,6 +114,7 @@ app.get("/get-user", authenticateToken, async (req,res)=>{
 })
 
 //login API
+
 app.post("/login", async (req, res)=>{
     const {email, password} = req.body;
 
@@ -131,31 +134,34 @@ app.post("/login", async (req, res)=>{
         })
     }
 
-    const userInfo = await User.findOne({email: email})
-
-    if(!userInfo)
+    try{
+        const userInfo = await User.findOne({email: email})
+    
+        if(!userInfo)
+        {
+            return res.status(400).json({
+                error: true,
+                message: "User not found"
+            })
+        }
+    
+        if(userInfo.email === email && userInfo.password === password)
+        {
+            const user = {user: userInfo};
+            const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET,{
+                expiresIn: "2h"
+            });
+    
+            return res.json({
+                error: false,
+                message: "Login successful",
+                accessToken,
+                email
+            })
+        }
+    }catch(e)
     {
-        return res.status(400).json({
-            error: true,
-            message: "User not found"
-        })
-    }
-
-    if(userInfo.email === email && userInfo.password === password)
-    {
-        const user = {user: userInfo};
-        const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET,{
-            expiresIn: "2h"
-        });
-
-        return res.json({
-            error: false,
-            message: "Login successful",
-            accessToken,
-            email
-        })
-    }
-    else{
+        console.log("Error:",e);
         return res.status(400).json({
             error: true,
             message: "Invalid Login",

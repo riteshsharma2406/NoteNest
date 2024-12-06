@@ -70,6 +70,12 @@ const NavIndex = () => {
                     <li className='border-b border-[#A27246]'><a href="#home">Home</a></li>
                     <li className='border-b border-[#A27246]'><a href="#feature">Feature</a></li>
                     <li className='border-b border-[#A27246]'><a href="#about">About</a></li>
+                    <Link to="/login">
+                        <li className='border-b border-[#A27246]'><a href="#about">Login</a></li>
+                    </Link>
+                    <Link to="/login">
+                        <li className='border-b border-[#A27246]'><a href="#about">Signup</a></li>
+                    </Link>
                 </ul>
             </div>
         </div>
